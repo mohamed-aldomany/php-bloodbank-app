@@ -1,0 +1,416 @@
+/* Navbar Code ***************************************/
+
+nav {
+    width: 100%;
+    background-color: #202c45;
+    padding: 0 50px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+nav > .logo {
+    margin: 0;
+    padding: 15px 20px;
+    float: left;
+}
+
+nav > .logo > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav > ul {
+    margin: 0;
+    padding: 0;
+    float: right;
+
+}
+
+nav > ul > li {
+    list-style: none;
+    display: inline-block;
+    padding: 20px 30px;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+
+nav > ul > li:hover {
+    background-color: #fe3c47;
+}
+
+nav > ul > li > a,
+nav > ul > li > a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav > ul > li > a,
+nav > ul > li > a:active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-responsive {
+    width: 100%;
+    background-color: #202c45;
+    padding: 10px 30px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+}
+
+.navbar-responsive > .logo-responsive {
+    margin: 0;
+    padding: 3px 0;
+    float: left;
+}
+
+.navbar-responsive > .logo-responsive > a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.navbar-responsive > .fa-bars {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    float: right;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.blood {
+    color: #fe3c47;
+}
+
+@media(max-width: 900px) {
+    nav {
+        display: none;
+        padding: 0;
+    }
+    .navbar-responsive {
+        display: block;
+    }
+    nav > .logo {
+        display: none;
+        float: none;
+    }
+    nav > ul {
+        float: none;
+    }
+    nav > ul > li {
+        display: block;
+        text-align: center;
+        background-color: #141e33;
+        padding: 15px 20px;
+        border-bottom: 1px solid #f2184f;
+    }
+}
+
+/*dropdown menu*/
+
+.dropdown {
+    background-color: #202C45;
+    min-width: 100px;
+}
+
+.dropdown-menu {
+    background-color: #202C45;
+
+}
+
+.dropdown-menu > li > a {
+    color: #fff !important;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-color: #F93C47;
+    padding-left: 30px;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+@media(max-width: 900px) {
+    .dropdown-menu {
+        background-color: #202C45;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* End Navbar *********************************************/
+
+.admin-header {
+    text-align: center;
+}
+
+.manage-members {
+    display: inline;
+    padding-right: 10px;
+}
+
+
+.fa-cog {
+    font-size: 30px;
+}
+
+.parent-admin {
+    padding: 5%;
+}
+
+
+.tabs-admin {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#my-tabs-admin {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#my-tabs-admin > li {
+    display: inline-block;
+    padding: 15px 80px;
+    background-color: #EEE;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+#my-tabs-admin > li.inactive3 {
+    background-color: #CCC;
+}
+
+
+table,
+td,
+th {
+    border: 1px solid #676767;
+    padding: 10px 10px;
+}
+
+table {
+    width: 100%;
+
+}
+
+
+.table-header {
+    font-weight: bold;
+    color: #FFF;
+    background-color: black;
+    text-align: center;
+}
+
+.edit-button-admin {
+    background-color: green;
+    color: #FFF;
+    padding: 5px 15px;
+    border: none;
+}
+
+.delete-button-admin {
+    background-color: red;
+    color: #FFF;
+    padding: 5px 15px;
+    border: none;
+}
+
+.activate-button-admin {
+    background-color: cornflowerblue;
+    color: #FFF;
+    padding: 5px 15px;
+    border: none;
+}
+
+.tables-disappear {
+    display: none;
+}
+
+/**  message form   */
+
+.message-input-edit {
+    display: block;
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    width: 96%;
+
+
+}
+
+.message-input-edit {
+    outline: none;
+
+}
+
+.message-input-edit:focus::-webkit-input-placeholder {
+
+    opacity: 0;
+    -webkit-transition: opacity .4s ease-in-out;
+    transition: opacity .4s ease-in-out;
+}
+
+.message-button-save {
+    border: none;
+    background-color: #9a9a9a;
+    color: #fff;
+    padding: 13px 20px;
+    border-radius: 15%;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.admin-edit1 {
+    width: 100%;
+    padding: 50px 0px;
+    display: none;
+
+}
+
+.message-form {
+    width: 500px;
+    background-color: #fe3c47;
+    padding: 2% 5%;
+    text-align: center;
+    margin: auto;
+    border-radius: 5%;
+}
+
+.edit-type {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #FFF;
+}
+
+/***** end message form */
+
+/**** donor form */
+
+.donor-input-edit {
+    float: right;
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    width: 46%;
+    margin-right: 2%;
+    margin-left: 2%;
+
+
+}
+
+.donor-input-edit {
+    outline: none;
+
+}
+
+.donor-input-edit:focus::-webkit-input-placeholder {
+
+    opacity: 0;
+    -webkit-transition: opacity .4s ease-in-out;
+    transition: opacity .4s ease-in-out;
+}
+
+.donor-button-save {
+    border: none;
+    background-color: #9a9a9a;
+    color: #fff;
+    padding: 13px 20px;
+    border-radius: 15%;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.admin-edit2 {
+    width: 100%;
+    padding: 50px 0px;
+    display: none;
+
+}
+
+.donor-form {
+    width: 600px;
+    background-color: #fe3c47;
+    padding: 2% 5%;
+    text-align: center;
+    margin: auto;
+    border-radius: 5%;
+}
+
+.edit-type {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #FFF;
+}
+
+
+/** end donor form */
+
+/****  institation form */
+
+.institution-input-edit {
+    float: left;
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    width: 46%;
+    margin-right: 2%;
+    margin-left: 2%;
+
+
+}
+
+.institution-input-edit {
+    outline: none;
+
+}
+
+.institution-input-edit:focus::-webkit-input-placeholder {
+
+    opacity: 0;
+    -webkit-transition: opacity .4s ease-in-out;
+    transition: opacity .4s ease-in-out;
+}
+
+.institution-button-save {
+    border: none;
+    background-color: #9a9a9a;
+    color: #fff;
+    padding: 13px 20px;
+    border-radius: 15%;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.admin-edit3 {
+    width: 100%;
+    padding: 50px 0px;
+    display: none;
+
+}
+
+.institution-form {
+    width: 600px;
+    background-color: #fe3c47;
+    padding: 2% 5%;
+    text-align: center;
+    margin: auto;
+    border-radius: 5%;
+}
+
+.edit-type {
+    text-align: center;
+    padding-bottom: 25px;
+    color: #FFF;
+}
+
+
+/** end institation form */

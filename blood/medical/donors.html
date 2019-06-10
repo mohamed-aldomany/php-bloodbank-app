@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title><?php if(isset($pageName)){echo $pageName;} ?></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="layout/Css/bootstrap.min.css">
+    <link rel="stylesheet" href="layout/Css/animate.css">
+    <link rel="stylesheet" href="layout/Css/jquery.bxslider.css">
+    <link rel="stylesheet" href="layout/Css/font-awesome.min.css">
+    <link rel="stylesheet" href="layout/Css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body>
+   <!--Navbar Code--------------------------------------------------------------------->
+
+   <div class="section1" id="top">
+
+<nav>
+    <h1 class="logo"><a href="home_medical.php"><span class="blood">Blood </span>Donation</a></h1>
+    <ul class="nav-ul">
+        <li><a href="donors.php">donors</a></li>
+        <li><a href="choosen.php" class="contact-linknav">mydonors</a></li>
+        <li><a href="aboutus_inside.php">About Us</a></li>
+        <li><a href="#" class="contact-linknav">Contact</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $_SESSION['accountname'] ?> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="edit_profile.php"><i class="fa fa-pencil"></i>&nbsp;Edit</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="manage.php?page=logout"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Log Out</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div style="clear:both"></div>
+</nav>
+<div class="navbar-responsive">
+    <h3 class="logo-responsive"><a href="#"><span class="blood">Blood </span>Donation</a></h3>
+    <i class="fa fa-bars"></i>
+    <div style="clear:both"></div>
+
+</div>
+</div>
+<!--End Navbar Code--------------------------------------------------------------------->
+
+
+<!--start hospital option-->
+    <nav class="hospital_option">
+        <label class="custom-select" for="styledSelect1">
+            <select id="styledSelect1" name="city">
+                <option value="">Select City</option>
+                    <option value=""></option>
+            </select>
+        </label>
+        <label class="custom-select" for="styledSelect1">
+            <select id="styledSelect1" name="blood">
+                    <option value="">Select bloodTyp</option>
+                    <?php
+                    $blood = $con->prepare("SELECT * FROM blood");
+                    $blood->execute();
+                    while($row=$blood->fetch()){
+                     ?>
+                    <option value="<?php echo $row['b_ID'] ?>"><?php echo $row['type']; ?></option>
+                <?php } ?>
+            </select>
+        </label>
+        <a href="select.php?page=city&id=<?php echo $row['b_ID'] ?>" class="btn btn-danger button_hos_info" role="button">Choose</a>
+    </nav>
+    <!--end hospital option-->
+
+        <!--start hospital info-->
+        <section class="all_info">
+            <div class="doners_info div-all-together">
+                <div class="_info col-sm-6 col-md-4">
+                    <form>
+
+
+                        <div class="hide_div"><span>Name: </span><span></span></div>
+                        <div class="hide_div"><span>E-mail: </span><span></span></div>
+
+                        <div class="hide_div"><span>Age: </span><span>
+                </span></div>
+
+                        <div class="hide_div"><span>Gender: </span><span>
+
+                    </span></div>
+
+                        <div class="hide_div"><span>Phone: </span><span></span></div>
+                        <div class="hide_div"><span>City: </span><span></span></div>
+                        <div class="hide_div"><span>Blood: </span><span></span></div>
+                        <div class="hide_div"><span>Date: </span><span></span></div>
+                        <div class="show_div"><span>Description: </span>
+                            <p>
+                            </p>
+                        </div>
+                        <div><i class="fa fa-tint fa-5x color " style="color: #D83841"></i></div>
+                        <a href="manage.php?page=choose&do=<?php echo $row['bt_ID']; ?>&d_ID=<?php echo $row['d_ID']; ?>" class="btn btn-danger button_info" role="button">Choose</a>
+                        <span class="one"></span>
+                        <span class="two"></span>
+                        <span class="three"></span>
+                        <span class="four"></span>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!--end hospital info-->
+        <script src="layout/js/jquery-1.11.1.min.js"></script>
+    <script src="layout/js/wow.min.js"></script>
+    <script src="layout/js/jquery.nicescroll.min.js"></script>
+    <script src="layout/js/bootstrap.min.js"></script>
+    <script src="layout/js/jquery.easing.1.3.js"></script>
+    <script src="layout/js/jquery.bxslider.js"></script>
+    <script src="layout/js/typed.js"></script>
+    <script src="layout/js/index.js"></script>
+</body>
+
+</html>

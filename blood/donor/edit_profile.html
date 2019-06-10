@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title><?php if(isset($pageName)){echo $pageName;} ?></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="layout/Css/bootstrap.min.css">
+    <link rel="stylesheet" href="layout/Css/animate.css">
+    <link rel="stylesheet" href="layout/Css/jquery.bxslider.css">
+    <link rel="stylesheet" href="layout/Css/font-awesome.min.css">
+    <link rel="stylesheet" href="layout/Css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+
+<body>
+   <!--Navbar Code--------------------------------------------------------------------->
+
+   <div class="section1" id="top">
+
+    <nav>
+        <h1 class="logo"><a href="home_user.php"><span class="blood">Blood </span>Donation</a></h1>
+        <ul class="nav-ul">
+            <li><a href="aboutus_inside.php">About Us</a></li>
+            <li><a href="#" class="contact-linknav">Contact</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $_SESSION['username'] ?> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="edit_profile.php"><i class="fa fa-pencil"></i>&nbsp;Edit</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="manage.php?do=logout"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Log Out</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <ul class="nav navbar-nav navbar-right">
+            <!-- Button trigger modal refer to the modal-->
+              <button type="button" class="btn btn-primary btn-md donateNow" data-toggle="modal" data-target="#myModal1">Donate Now</button>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+        <div style="clear:both"></div>
+    </nav>
+    <div class="navbar-responsive">
+        <h3 class="logo-responsive"><a href="#"><span class="blood">Blood </span>Donation</a></h3>
+        <i class="fa fa-bars"></i>
+        <div style="clear:both"></div>
+
+    </div>
+</div>
+<!--End Navbar Code--------------------------------------------------------------------->
+
+
+
+    <!-- Edit Profile Form-->
+    <div class="edit-profile">
+        <div class="edit-profile-form">
+            <form class="edit-form-donor" action="manage.php?do=don_update" method="post">
+                <h3 class="edit-type">Edit Profile</h3>
+
+                <input type="hidden" name="id" value="<?php echo $row['d_ID'] ?>">
+
+                <input type="text" class="edit-profile-input" placeholder="UserName" name="username" value="">
+
+                <input type="text" class="edit-profile-input" placeholder= "Full Name" name="fullname" value="">
+
+                <input type="text" class="edit-profile-input" placeholder="Email" name="email" value="">
+
+                <input type="text" class="edit-profile-input" placeholder="Password" name="password" value="">
+
+                <input type="text" class="edit-profile-input" placeholder="Gender" name="gender" value="">
+
+                <input type="text" class="edit-profile-input" placeholder="Age" name="age" value="">
+
+                <input type="text" class="edit-profile-input" placeholder="Phone" name="phone" value="">
+
+                <input type="text" class="edit-profile-input" placeholder="Tel-Phone" name="telephone" value="">
+
+                <input type="text" class="edit-profile-input" placeholder="Address" name="address" value="">
+
+                <select class="edit-profile-input" name="city">
+                            <option>City</option>
+                </select>
+
+
+                <select class="edit-profile-input" name="blood">
+                            <option>Blood Type...</option>-input
+                            <option value=""></option>
+               </select>
+                <br style="clear: both">
+                <button type="submit" name="submit" class="edit-profile-save">Save Changes</button>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Profile Form-->
+
+   <!-- Modal  start-->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Check Your Data</h4>
+          </div>
+          <div class="modal-body"> <!--body of modal start-->
+
+            <form  action="manage.php?do=donateNow" method="post"> <!--start of form--->
+              <div class="form-group">
+                <label for="exampleInputPassword1">First Name</label>
+                <input type="text" class="form-control" name="fullname" placeholder="fullname" value="" disabled>
+              </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Last Name</label>
+                <input type="text" class="form-control" name="username" placeholder="username" value="" disabled>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" name="email" placeholder="Email address" value="" disabled>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">City</label>
+                <input type="text" class="form-control" name="address" placeholder="City" value="" disabled>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Blood</label>
+                <input type="text" class="form-control" name="blood" placeholder="BloodType" value="" disabled>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Description</label>
+                <textarea class="form-control" name="descripe" placeholder="description" ></textarea>
+              </div>
+
+            <button type="submit" class="btn btn-primary" name="submit">Donate</button>
+            <a href="edit_profile.php"><button type="button" class="btn btn-primary">change data</button></a>
+            </form> <!--end of form -->
+
+          </div><!--body of modal end-->
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal  end-->
+
+
+
+
+    <!--start scroll to top-->
+    <a id="scroll-top" href="#top">
+        <i class="fa fa-chevron-up fa-2x"></i>
+    </a>
+    <!--end scroll to top-->
+    <!--start loading-->
+    <div class="loading-overlay">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!--end loading-->
+    <script src="layout/js/jquery-1.11.1.min.js"></script>
+    <script src="layout/js/wow.min.js"></script>
+    <script src="layout/js/jquery.nicescroll.min.js"></script>
+    <script src="layout/js/bootstrap.min.js"></script>
+    <script src="layout/js/jquery.easing.1.3.js"></script>
+    <script src="layout/js/jquery.bxslider.js"></script>
+    <script src="layout/js/typed.js"></script>
+    <script src="layout/js/index.js"></script>
+</body>
+
+</html>

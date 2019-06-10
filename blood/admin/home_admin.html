@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="layout/css/bootstrap.min.css">
+    <link rel="stylesheet" href="layout/css/font-awesome.min.css">
+    <link rel="stylesheet" href="layout/css/admin.css">
+</head>
+<body>
+   <!--Navbar Code--------------------------------------------------------------------->
+   <div class="section1" id="top">
+
+<nav>
+    <h1 class="logo"><a href="home_admin.php"><span class="blood">Blood </span>Donation</a></h1>
+    <ul class="nav-ul">
+        <li><a href="home_admin.php">Home</a></li>
+        <li><a href="admin.php">Manage</a></li>
+        <li><a href="../donor/home_user.php">live</a></li>
+
+        <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'] ?><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+
+                <li><a href="edit_profile.php"><i class="fa fa-pencil"></i>&nbsp;Edit</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="edit_content.php?do=logout"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Log Out</a></li>
+              </ul>
+            </li>
+    </ul>
+    <div style="clear:both"></div>
+</nav>
+<div class="navbar-responsive">
+    <h3 class="logo-responsive"><a href="#"><span class="blood">Blood </span>Donation</a></h3>
+    <i class="fa fa-bars"></i>
+    <div style="clear:both"></div>
+
+</div>
+</div>
+<!--End Navbar Code--------------------------------------------------------------------->
+
+<!--start statistic-->
+    <section class="statistics text-center exp">
+        <div class="data">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats wow pulse" data-wow-duration="1.5s" data-wow-delay=".5s">
+                            <i class="fa fa-envelope  fa-5x"></i>
+                            <p></p>
+                            <span>Total Messages</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats wow pulse" data-wow-duration="1.5s" data-wow-delay="1.0s">
+                            <i class="fa fa-users  fa-5x"></i>
+                            <p></p>
+                            <span>Total Donors</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats wow pulse" data-wow-duration="1.5s" data-wow-delay="1.5s">
+                            <i class="fa fa-h-square      fa-5x"></i>
+                            <p></p>
+                            <span>Total Institution</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats wow pulse" data-wow-duration="1.5s" data-wow-delay="2.0s">
+                            <i class="fa fa-pause  fa-5x"></i>
+                            <p></p>
+                            <span>Total donor Pending</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <div style="clear:both"></div>
+    <!--end statistic-->
+
+
+    <!-- statistics2------------------------>
+
+    <div class="statistics2">
+        <div class="parent10">
+            <div class="div1-stat">
+                <h3 class="stat2-h"><i class="fa fa-user" aria-hidden="true"></i>  Lastest 3 Rigister Donors</h3>
+                <div class="stat-content">
+                    <p class="stat-p"><i class="fa fa-chevron-right"></i>
+                    </p>
+                </div>
+                
+            </div>
+            <div class="div2-stat">
+                <h3 class="stat2-h"><i class="fa fa-shopping-cart" aria-hidden="true"></i>  Lastest 3 Register Institutions</h3>
+                <div class="stat-content">
+                    <p class="stat-p"><i class="fa fa-chevron-right"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="div3-stat">
+                <h3 class="stat2-h"><i class="fa fa-envelope" aria-hidden="true"></i>  Lastest 3 Comments By</h3>
+                <div class="stat-content">
+                    <p class="stat-p"><i class="fa fa-chevron-right"></i>
+                    </p>
+                </div>
+                
+            </div>
+            <div style="clear:both"></div>
+        </div>
+
+    </div>
+
+    <!-- statistics2------------------------>
+
+
+
+    <!--start scroll to top-->
+    <a id="scroll-top" href="#top">
+        <i class="fa fa-chevron-up fa-2x"></i>
+    </a>
+    <!--end scroll to top-->
+    <!--start loading-->
+    <div class="loading-overlay">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!--end loading-->
+    <script src="layout/js/jquery-3.2.1.min.js"></script>
+    <script src="layout/js/wow.min.js"></script>
+    <script src="layout/js/jquery.nicescroll.min.js"></script>
+    <script src="layout/js/bootstrap.min.js"></script>
+    <script src="layout/js/index.js"></script>
+
+</body>
+</html>
